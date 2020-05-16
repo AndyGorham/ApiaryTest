@@ -1,0 +1,39 @@
+FORMAT: 1A
+HOST: http://api.spiderlog.net
+
+# Spider log API
+Provides services for the Spider Log app
+
+# Group Spiders
+Access to Spider resources
+
+## My Spiders [/spiders{?page,size}]
+### Get all spider sightings [GET]
+
++ Parameters
+    + page (required, number, 1)... page number
+    + size (required, number, 10)... page size
++ Request
+
+    + Header
+    
+        Authorization: Basic
+        
++ Response 200 (application/json)
+
+        {
+            "page" :
+            {
+                "number" : 1,
+                "size" : 10,
+                "totalPages" : 20
+            },
+            "spiders":
+            [{
+                "sightedAt" : "2014-08-29T97:99",
+                "imageUrl" : "test/test.jpg",
+                "tags" : [
+                    "stripy"
+                ]
+            }]
+        }
